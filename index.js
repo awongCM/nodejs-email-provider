@@ -5,7 +5,7 @@ const emailservice = require('./email-service');
 const app = express();
 const router = express.Router();
 
-const from_field = 'One Heck Excited User <me@samples.mailgun.org>';
+const from_field = 'One Heck Excited User <someone@emailprovider.com>';
 
 router.get('/', (req, res) => {
   res.writeHead(200, {'Content-Type': 'text/plain'});
