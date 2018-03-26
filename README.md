@@ -6,6 +6,7 @@ EMAIL PROVIDER SERVICE USING NODEJS
 
 * NodeJS (static web server for Heroku)
 * ExpressJS
+* Promises/Callbacks
 * NPM
 * MailGun Service
 * SendGrid Service
