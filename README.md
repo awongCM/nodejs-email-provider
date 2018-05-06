@@ -14,8 +14,8 @@ EMAIL PROVIDER SERVICE USING NODEJS
 ## Installation Process
 1. Download the zipped file
 2. Run `npm install`
-3. Run `npm start`
-4. Use POSTMAN client to nagivate to  main endpoint: `http://localhost:3000/api/`
+3. Run `npm start` or `yarn start`
+4. Use POSTMAN client to nagivate to  main endpoint: `http://localhost:7000/api/`
 
 ## Usage
 To use the email service provider, use `send-email` endpoint; use `POST` method, and provide the following body
@@ -26,6 +26,9 @@ paramaeters:
 2. `text` field
 2. `cc` fields in comma separated values
 2. `bcc` fields in comma separated values
+
+## TODO
+Remember to switch off SendGrid/MailGun accounts after leaving API online service running for too long.
 
 ## License
 
