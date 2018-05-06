@@ -18,12 +18,12 @@ exports.sendEmailMessage = function(params, callback){
   mailgun.sendEmailAsync(msg)
     .then( (res) =>callback(null, res))
     .catch( (err) => {
-      console.log("MailGunService failed due to: ", error);
+      console.log("MailGunService failed due to: ", err);
 
       sendgridmail.sendEmailAsync(msg)
         .then( (res) =>callback(null, res))
         .catch( (err) => {
-          console.log("SendGridService failed due to: ", error);
+          console.log("SendGridService failed due to: ", err);
 
           callback(err);
         });
