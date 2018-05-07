@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const emailservice = require('../services/email-service');
+const validateParams = require('../helpers/params-validations');
 
 const yamlLoader = require('js-yaml');
 const fs = require('fs');
@@ -29,7 +30,10 @@ router.post('/send-email', (req, res, next) => {
       bcc: bcc_fields
     };
 
-    emailservice.sendEmailMessage(params, (err, body)=> {
+    if(!validateParams(params)) {
+      res.status(400).json({message:"Cannot send email at this time due to bad email validations"});
+    } else {
+      emailservice.sendEmailMessage(params, (err, body)=> {
       if(err) {        
         console.log('routes err: '+err);
         res.status(400).json({message:"Problem using email gateway service at this time"});
@@ -37,7 +41,8 @@ router.post('/send-email', (req, res, next) => {
 
       res.status(200).json({message:"Email successfully sent"});
       
-    });
+      });
+    }
 });
 
 module.exports = router;
