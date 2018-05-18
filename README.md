@@ -32,7 +32,8 @@ paramaeters:
 2. `bcc` fields in comma separated values
 
 ## TODO
-Remember to switch off SendGrid/MailGun accounts after leaving API online service running for too long.
+1. Remember to switch off SendGrid/MailGun accounts after leaving API online service running for too long.
+2. Find appropriate approach in securely storing API service keys.
 
 ## License
 
