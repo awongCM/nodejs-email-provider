@@ -1,10 +1,5 @@
-// TODO - to be removed from service, replaced with more secure API call
-const yamlLoader = require('js-yaml');
-const fs = require('fs');
-const config = yamlLoader.safeLoad(fs.readFileSync('config.yml', 'utf8'));
-
 // MailGun Service
-const mailgun = require('mailgun-js')({apiKey: config.MAILGUN.API_KEY, domain: config.MAILGUN.DOMAIN});
+const mailgun = require('mailgun-js')({apiKey: process.env.MAILGUN_API_KEY, domain: process.env.MAILGUN_DOMAIN});
 
 exports.sendEmailAsync = function (data) {
   console.log('mail-gun data: ' + JSON.stringify(data));

@@ -1,12 +1,6 @@
-// TODO - to be removed, replaced with more secure API call
-const yamlLoader = require('js-yaml');
-const fs = require('fs');
-const config = yamlLoader.safeLoad(fs.readFileSync('config.yml', 'utf8'));
-
 // SendGrid Service
 const sgMail = require('@sendgrid/mail');
-// sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-sgMail.setApiKey(config.SENDGRID.API_KEY);
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 exports.sendEmailAsync = function (data) {
   console.log('sendgrid-mail data: ' + JSON.stringify(data));
