@@ -1,3 +1,4 @@
+// TODO - to be removed from service, replaced with more secure API call
 const yamlLoader = require('js-yaml');
 const fs = require('fs');
 const config = yamlLoader.safeLoad(fs.readFileSync('config.yml', 'utf8'));
