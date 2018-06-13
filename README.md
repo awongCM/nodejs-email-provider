@@ -30,11 +30,3 @@ paramaeters:
 2. `text` field
 2. `cc` fields in comma separated values
 2. `bcc` fields in comma separated values
-
-## TODO
-1. Remember to switch off SendGrid/MailGun accounts after leaving API online service running for too long.
-2. Find appropriate approach in securely storing API service keys.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/awongCM/post-it-notes-board-react/blob/master/LICENSE) file for details
